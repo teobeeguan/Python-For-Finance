@@ -1,0 +1,4 @@
+pandas_datareader==0.10.0
+streamlit==1.18.1
+yahoo_fin==0.8.9.1
+~treamlit==1.16.0
