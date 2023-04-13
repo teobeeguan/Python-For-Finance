@@ -16,7 +16,7 @@ request = requests.get(url)
 print(request.text)
 
 parser = BeautifulSoup(request.text, "html.parser")
-news_html = parser.find_all('a', {'class': 'article-item'})
+news_html = parser.find_all('a', {'class': 'article'})
 print(news_html[0])
 
 sentiments = []
@@ -24,9 +24,9 @@ for i in range(0, len(news_html)):
     sentiments.append(
             {
                 'ticker': ticker,
-                'date': news_html[i].find('h5', {'class': 'article-date'}).text,
-                'title': news_html[i].find('h4', {'class': 'article-title'}).text,
-                'text': news_html[i].find('p', {'class': 'article-text'}).text
+                'date': news_html[i].find('h5', {'class': 'article__date'}).text,
+                'title': news_html[i].find('h4', {'class': 'article__title-text'}).text,
+                'text': news_html[i].find('p', {'class': 'article__text'}).text
             }
         )
 
